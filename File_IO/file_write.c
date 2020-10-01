@@ -1,13 +1,4 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: Yueyang
- * @email: 1700695611@qq.com
- * @Date: 2020-10-01 12:47:09
- * @LastEditors: Yueyang
- * @LastEditTime: 2020-10-01 13:16:41
--->
-<!--
+/*
  *                        _oo0oo_
  *                       o8888888o
  *                       88" . "88
@@ -32,13 +23,50 @@
  * 
  *            佛祖保佑       永不宕机     永无BUG
  * 
- *        佛曰:  
- *                写字楼里写字间，写字间里程序员；  
- *                程序人员写程序，又拿程序换酒钱。  
- *                酒醒只在网上坐，酒醉还来网下眠；  
- *                酒醉酒醒日复日，网上网下年复年。  
- *                但愿老死电脑间，不愿鞠躬老板前；  
- *                奔驰宝马贵者趣，公交自行程序员。  
- *                别人笑我忒疯癫，我笑自己命太贱；  
- *                不见满街漂亮妹，哪个归得程序员？
- -->
+ */
+
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yueyang
+ * @email: 1700695611@qq.com
+ * @Date: 2020-10-01 12:50:08
+ * @LastEditors: Yueyang
+ * @LastEditTime: 2020-10-01 13:16:18
+ */
+
+#include <unistd.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+int main(int argc,void** argv)
+{
+    char *data,*filename;
+    int fd,ret,count;
+    if(argc!=4)
+    {
+        printf("please choose file");
+        return -1;
+    }
+    count=atoi(argv[3]);
+    data=argv[2];
+    filename=argv[1];
+
+    fd =open(filename,O_WRONLY|O_APPEND);
+    printf("fd_id:%d\n",fd);
+    if(fd<0)
+    {
+        perror("open error\n");
+        return -1;
+    }
+    ret =write(fd,data,count);
+    if(ret==-1)
+    {
+        perror("write error\n");
+        return -1;
+    }
+    
+    return 0;
+}

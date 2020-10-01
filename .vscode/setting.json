@@ -1,0 +1,20 @@
+{
+    "C_Cpp.updateChannel": "Insiders",
+
+       "fileheader.customMade": {
+        "Descripttion": "",
+        "version": "",
+        "Author": "Yueyang",
+        "email": "1700695611@qq.com",
+        "Date": "Do not edit",
+        "LastEditors": "Yueyang",
+        "LastEditTime": "Do not Edit"
+    },
+
+    "fileheader.cursorMode": {
+        "name": "",
+        "msg": "",
+        "param": "",
+        "return": ""
+    }
+}
